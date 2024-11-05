@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/anubhav-portfolio1/static/css/main.fd8c9604.css",
+    "main.js": "/anubhav-portfolio1/static/js/main.f3da47ad.js",
+    "static/js/488.c3fb5652.chunk.js": "/anubhav-portfolio1/static/js/488.c3fb5652.chunk.js",
+    "static/media/project2.gif": "/anubhav-portfolio1/static/media/project2.c2f1a2e80e2054f3acff.gif",
+    "static/media/Anubhav_Resume_2.pdf": "/anubhav-portfolio1/static/media/Anubhav_Resume_2.48d8f8e295303cd4b129.pdf",
+    "static/media/dp.jpg": "/anubhav-portfolio1/static/media/dp.517884c02bbd1d93238b.jpg",
+    "static/media/shubham-dhage-5OTqYa9uBZk-unsplash.jpg": "/anubhav-portfolio1/static/media/shubham-dhage-5OTqYa9uBZk-unsplash.abeaaf6209dd1c8f7b2e.jpg",
+    "static/media/netflix.gif": "/anubhav-portfolio1/static/media/netflix.f021a8cc47a4bf32e04b.gif",
+    "static/media/logo-color.png": "/anubhav-portfolio1/static/media/logo-color.d58f96c179e4cb78481c.png",
+    "index.html": "/anubhav-portfolio1/index.html",
+    "main.fd8c9604.css.map": "/anubhav-portfolio1/static/css/main.fd8c9604.css.map",
+    "main.f3da47ad.js.map": "/anubhav-portfolio1/static/js/main.f3da47ad.js.map",
+    "488.c3fb5652.chunk.js.map": "/anubhav-portfolio1/static/js/488.c3fb5652.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd8c9604.css",
+    "static/js/main.f3da47ad.js"
+  ]
+}
