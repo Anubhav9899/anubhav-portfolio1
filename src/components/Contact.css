@@ -1,0 +1,158 @@
+/* Contact Section */
+.contact {
+  padding: 50px;
+  background: #222;
+  color: #ddd;
+  text-align: center;
+}
+
+/* Contact Heading with 3D Effect and Additional Features */
+.contact h2 {
+  font-size: 2.5rem; /* Set the font size for the heading */
+  color: #f39c12; /* Set the initial color */
+  position: relative; /* Required for the pseudo-elements */
+  overflow: hidden; /* Hide overflow for the animation effect */
+  animation: slideIn 1s ease forwards; /* Animation on load */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.5); /* 3D Shadow */
+}
+
+/* Keyframes for slide-in effect */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-50px); /* Start from above */
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    transform: translateY(0); /* End at original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* Hover Effect for Heading */
+.contact h2:hover {
+  color: #e67e22; /* Change color on hover */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.7),
+    /* Deeper shadow on hover */ 0 8px 16px rgba(0, 0, 0, 0.7); /* More pronounced shadow */
+  transform: translateZ(10px) scale(1.05); /* Add depth and scale on hover */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  animation: shake 0.5s ease forwards; /* Shake effect on hover */
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-3px, 0);
+  }
+  50% {
+    transform: translate(3px, 0);
+  }
+  75% {
+    transform: translate(-3px, 0);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* Glowing Outline Effect on Hover */
+.contact h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px; /* Positioning the underline */
+  height: 5px; /* Height of the underline */
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.2)
+  );
+  transform: scaleX(0); /* Initial state is hidden */
+  transition: transform 0.5s ease; /* Smooth transition */
+}
+
+/* Show the glowing underline on hover */
+.contact h2:hover::after {
+  transform: scaleX(1); /* Expand underline on hover */
+}
+
+/* Contact Form Styling */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Increased gap for better spacing */
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Input and Textarea Styling */
+.contact input,
+.contact textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for background color and scale */
+}
+
+/* Hover Effect for Input and Textarea */
+.contact input:hover,
+.contact textarea:hover {
+  background: #444; /* Darker shade on hover */
+  transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+/* Focus Effect for Input and Textarea */
+.contact input:focus,
+.contact textarea:focus {
+  background: #555; /* Even darker shade on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Add glow effect on focus */
+}
+
+/* Button Styling */
+.contact button {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00aaff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  position: relative; /* Set position for the ripple effect */
+  overflow: hidden; /* Hide overflow for the ripple effect */
+}
+
+/* Button Hover Effect */
+.contact button:hover {
+  background-color: #0088cc;
+  transform: translateY(-3px) scale(1.05); /* Lift effect on hover */
+}
+
+/* Ripple Effect */
+.contact button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%; /* Width of the ripple */
+  height: 300%; /* Height of the ripple */
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+  transition: transform 0.5s ease; /* Smooth transition */
+  opacity: 0; /* Start invisible */
+}
+
+/* Show ripple effect on button hover */
+.contact button:hover::after {
+  transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+  opacity: 1; /* Make visible */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Transition for both scaling and opacity */
+}

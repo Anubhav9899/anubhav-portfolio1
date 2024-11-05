@@ -1,13 +1,37 @@
-body {
+/* Temporary border for debugging */
+* {
+  outline: 1px solid rgba(255, 0, 0, 0.2);
+}
+/* Global reset */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+.about {
+  width: 100%;
+  max-width: 1200px; /* Optional: Define a maximum width */
+  margin: 0 auto; /* Center the content horizontally */
+  padding: 20px; /* Add padding to ensure it doesn’t touch the edges */
+}
+.main-container {
+  display: flex;
+  flex-direction: column; /* Stack vertically if needed */
+  align-items: center; /* Align items to the center horizontally */
+  width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Prevent horizontal overflow */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Basic body styling */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: #ec0b0b;
 }

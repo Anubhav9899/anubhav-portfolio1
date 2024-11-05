@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background: #222;
+  background-image: linear-gradient(to right, #333 1px, transparent 1px),
+    linear-gradient(to bottom, #333 1px, transparent 1px);
+  background-size: 40px 40px;
+  cursor: none; /* Hide default cursor */
+}
+
+/* Custom cursor style */
+
+/* Style for animated elements */
+.element {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: #0f0; /* Neon green */
+  pointer-events: none; /* Prevent interactions */
+  width: 10px;
+  height: 10px;
+  transition: 1s; /* Smooth transition */
+  font-size: 2em;
+  filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 5px #0f0) hue-rotate(60deg);
+}
+
+/* Fade-in styles */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Additional styles for header and other components */
+.header {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: background 0.5s ease, transform 0.3s ease, filter 0.3s ease;
+  filter: saturate(0.9);
+}
+
+.header.scrolled {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(20, 20, 20, 0.9)
+  );
+  transform: scale(0.98);
+  filter: blur(1px) saturate(1.2);
+}
+
+/* Navigation Links Styles */
+.nav-links {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+/* Navigation Links Items */
+.nav-links li {
+  display: inline-block;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  color: #fff;
+  cursor: pointer;
+  position: relative; /* Position for pseudo-elements */
+  transition: color 0.3s ease, transform 0.3s ease; /* Transition for color and scale */
+}
+
+/* Hover Effect for Navigation Links */
+.nav-links li:hover {
+  color: #00aaff;
+  transform: scale(1.2) translateY(-3px); /* Slightly enlarge and lift on hover */
+  animation: bounce 0.6s; /* Bounce animation */
+  box-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 30px #00aaff; /* Neon glow effect */
+}
+
+/* Underline Effect on Hover */
+.nav-links li::after {
+  content: ""; /* Pseudo-element for underline */
+  position: absolute; /* Positioning it absolutely */
+  left: 50%; /* Center it */
+  bottom: -5px; /* Position it below the text */
+  width: 0; /* Start with width 0 */
+  height: 2px; /* Height of the underline */
+  background: #00aaff; /* Color of the underline */
+  transition: width 0.3s ease, left 0.3s ease; /* Transition for width and position */
+}
+
+/* Expand the underline on hover */
+.nav-links li:hover::after {
+  width: 100%; /* Expand to full width on hover */
+  left: 0; /* Align to the left */
+}
+
+/* Active Link Effect */
+.nav-links li.active {
+  color: #00aaff; /* Active color */
+  text-shadow: 0 0 5px #00aaff; /* Light glow for active state */
+}
+
+/* Ripple Effect on Navigation Links */
+.nav-links li:hover {
+  overflow: hidden; /* Hide overflow for ripple */
+}
+
+.nav-links li:hover::before {
+  content: ""; /* Pseudo-element for ripple */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%; /* Start with wide width */
+  height: 300%; /* Start with high height */
+  background: rgba(0, 170, 255, 0.3); /* Ripple color */
+  border-radius: 50%; /* Circular ripple */
+  transform: translate(-50%, -50%) scale(0); /* Center and scale down */
+  transition: transform 0.6s ease; /* Smooth transition */
+}
+
+.nav-links li:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+}
+
+/* Add Animation to Links */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply fade-in animation to links */
+.nav-links li {
+  animation: fadeIn 0.5s forwards; /* Animation on load */
+  animation-delay: calc(0.1s * var(--i)); /* Staggered effect */
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Lift slightly on hover */
+  }
+}
+
+/* Neon glow effect */
+.nav-links li:hover {
+  text-shadow: 0 0 8px rgba(0, 170, 255, 0.7), 0 0 15px rgba(0, 170, 255, 0.6),
+    0 0 20px rgba(0, 170, 255, 0.5); /* Glow effect */
+}

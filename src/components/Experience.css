@@ -1,0 +1,211 @@
+/* Importing Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Moon+Dance&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto+Mono&family=Yeon+Sung&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #342e37;
+}
+
+/* Main Box with Glowing Gradient Border */
+.box {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  border-radius: 20px; /* Rounded corners for glowing border */
+  background: linear-gradient(45deg, #ff0, #f0f, #0ff, #f39c12, #0ff);
+  background-size: 200% 200%;
+  animation: gradientGlow 4s ease infinite;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, #ff0, #f0f, #0ff, #f39c12, #0ff);
+  border-radius: inherit;
+  animation: gradientGlow 4s ease infinite;
+  filter: blur(20px);
+  opacity: 0.75;
+  z-index: -1;
+}
+
+@keyframes gradientGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Styling for Experience Section */
+.experience {
+  padding: 50px;
+  background-color: #111;
+  color: #ddd;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Experience Heading */
+.experience-heading {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #f39c12;
+  text-transform: uppercase;
+  position: relative;
+  animation: slideIn 1s ease forwards;
+  overflow: hidden;
+}
+
+/* Keyframes for Slide-In Animation */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Text Shadow for Enhanced Effect */
+.experience-heading::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: rgba(243, 156, 18, 0.5);
+  filter: blur(4px);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.experience-heading:hover::before {
+  transform: scale(1.1);
+}
+
+/* Experience Item Style */
+.experience-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 600px;
+}
+
+.experience-item {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item h3 {
+  color: #00aaff;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.experience-item h4 {
+  color: #e67e22;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.experience-item p {
+  color: #ccc;
+}
+
+.experience-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Enhanced Resume Button */
+.resume-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  background-color: #f39c12;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+/* Glow effect on hover */
+.resume-button:hover {
+  background-color: #e67e22;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 153, 0, 0.6);
+}
+
+/* Ripple Effect on Button */
+.resume-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0.6;
+  transition: transform 0.4s ease;
+}
+
+.resume-button:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.6s ease;
+}
+
+/* Continuous Glow Effect */
+.resume-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  animation: shine 3s ease-in-out infinite;
+  transform: rotate(45deg);
+}
+
+@keyframes shine {
+  0% {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  50% {
+    transform: translate(50%, 50%) rotate(45deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}

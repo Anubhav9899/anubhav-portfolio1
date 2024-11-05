@@ -1,0 +1,37 @@
+/* Hide the default cursor */
+* {
+  cursor: none; /* Hides the default cursor */
+  margin: 0; /* Reset margin for all elements */
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevents horizontal overflow */
+}
+
+/* Custom Cursor styling */
+#cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 255, 255, 0.8); /* Cyan glow */
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6),
+    0 0 30px rgba(0, 255, 255, 0.4);
+  z-index: 9999; /* Ensures it stays on top without affecting layout */
+}
+
+/* Trail element styling */
+.trail {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(0, 255, 255, 0.6); /* Lighter cyan glow */
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.6), 0 0 15px rgba(0, 255, 255, 0.4);
+  z-index: 9999; /* Ensures trails stay on top without affecting layout */
+}
